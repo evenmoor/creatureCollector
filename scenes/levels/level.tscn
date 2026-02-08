@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://cgwh4h6gv5hwt"]
+[gd_scene load_steps=6 format=4 uid="uid://cgwh4h6gv5hwt"]
 
 [ext_resource type="PackedScene" uid="uid://cwps74bkthxs2" path="res://scenes/characters/player.tscn" id="1_377w7"]
 [ext_resource type="Texture2D" uid="uid://c5u5ewc16evhj" path="res://assets/graphics/tiles/overworld.png" id="1_bovvr"]
+[ext_resource type="PackedScene" uid="uid://b6axjvgw6xnb8" path="res://scenes/characters/trainer.tscn" id="3_b2cq8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b2cq8"]
 texture = ExtResource("1_bovvr")
@@ -221,6 +222,12 @@ tile_set = SubResource("TileSet_xb4v1")
 [node name="objects" type="Node2D" parent="."]
 
 [node name="characters" type="Node2D" parent="objects"]
+y_sort_enabled = true
 
 [node name="player" parent="objects/characters" instance=ExtResource("1_377w7")]
 character_style = 2
+character_view_distance = 20
+
+[node name="trainer" parent="objects/characters" instance=ExtResource("3_b2cq8")]
+position = Vector2(45, -61)
+character_style = 1

@@ -2,9 +2,15 @@ class_name Character extends CharacterBody2D #the classname allows us to extend 
 
 #scene variables
 @onready var sprite:Sprite2D = $characterSprite
+@onready var vision:RayCast2D = $caracterVisionRay
 
 #character variables
 @export var character_style: Data.CHARACTER_STYLE
+
+#variables to handle view not sure why these are here... it might make more sense for these to be in the trainer class unless there are plans for other character types that will need them.....
+@export var character_view_distance:int = 70
+var view_direction:Vector2i #direction currently looking
+var last_direction_looked:Vector2i #last direction this character looked pending implementation
 
 #variables to handle movement
 var direction:Vector2

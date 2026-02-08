@@ -17,3 +17,5 @@ vframes = 4
 
 [node name="characterCollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_1bdar")
+
+[node name="caracterVisionRay" type="RayCast2D" parent="."]

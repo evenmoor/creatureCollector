@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6axjvgw6xnb8"]
+
+[ext_resource type="PackedScene" uid="uid://drvov87dits7i" path="res://scenes/characters/character.tscn" id="1_nlber"]
+[ext_resource type="Script" uid="uid://dgyb6b50tcv5l" path="res://scripts/trainer.gd" id="2_7ugo5"]
+
+[node name="trainer" instance=ExtResource("1_nlber")]
+script = ExtResource("2_7ugo5")
+
+[node name="timers" type="Node" parent="." index="2"]
+
+[node name="trainerWatchTimer" type="Timer" parent="timers" index="0"]
+wait_time = 4.0
+autostart = true
+
+[connection signal="timeout" from="timers/trainerWatchTimer" to="." method="_on_trainer_watch_timer_timeout"]

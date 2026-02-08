@@ -5,7 +5,6 @@
 
 [node name="player" instance=ExtResource("1_rp718")]
 script = ExtResource("2_yewv4")
-character_style = 0
 
 [node name="playerCamera" type="Camera2D" parent="." index="2"]
 zoom = Vector2(3, 3)
