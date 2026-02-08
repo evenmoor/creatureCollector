@@ -230,5 +230,4 @@ character_view_distance = 20
 
 [node name="trainer" parent="objects/characters" instance=ExtResource("3_b2cq8")]
 position = Vector2(45, -61)
-dialog = Array[String](["Hello Sucker", "Awww", "Whaaa?"])
 character_style = 1

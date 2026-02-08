@@ -1,9 +1,21 @@
 extends Character
 
+var interactable:Character
+
+func _check_interactable() -> void :
+	if vision.collide_with_bodies:
+		interactable = vision.get_collider()
+
 func _get_input() -> void:
 	if not Data.current_active_character: #pause input when an enemy is moving to challenge
 		is_running = Input.is_action_pressed("run")
 		direction = Input.get_vector("left", "right", "up", "down")
+		
+		if Input.is_action_just_pressed("interact") and interactable:
+			Data.current_active_character = interactable
+			Data.current_active_character.looking_around = false
+			Data.current_active_character.set_view_direction(-get_character_direction(Data.current_active_character))
+			Data.current_active_character.show_dialog()
 	else:
 		set_view_direction(get_character_direction((Data.current_active_character)))
 		direction = Vector2.ZERO
@@ -18,5 +30,7 @@ func _update_view_direction() -> void:
 func _physics_process(delta: float) -> void:
 	_get_input()
 	_update_view_direction()
+	_check_interactable() 
+	
 	move()
 	animate(delta)

@@ -1,10 +1,18 @@
 extends Character
 
+@onready var dialog_box:PanelContainer = $dialogBox
 @onready var player = get_tree().get_first_node_in_group("Player")
 @onready var walk_wait_timer:Timer = $timers/traimerWalkWaitTimer
 @onready var watch_timer:Timer = $timers/trainerWatchTimer
 
+#dialog variables
+@export var dialog:Array[String] = []
+var current_dialog:int = 0
 
+func show_dialog() -> void:
+	dialog_box.show()
+	dialog_box.set_text(dialog[current_dialog])
+	current_dialog += 1
 
 func _on_trainer_watch_timer_timeout() -> void:
 	if looking_around:
@@ -31,5 +39,5 @@ func _process(delta: float) -> void:
 		if position.distance_to(player.position) <= stop_radius :
 			sprite.frame_coords.x = 0
 			direction = Vector2.ZERO
-			print("show dialog!")
+			show_dialog()
 		move()
