@@ -7,6 +7,10 @@ func _check_interactable() -> void :
 		interactable = vision.get_collider()
 
 func _get_input() -> void:
+	if Input.is_action_pressed("test"): #manually flip defeat bit to test dialog trees
+		for trainer in get_tree().get_nodes_in_group("Enemies"):
+			trainer.defeated = !trainer.defeated
+		
 	if not Data.current_active_character: #pause input when an enemy is moving to challenge
 		is_running = Input.is_action_pressed("run")
 		direction = Input.get_vector("left", "right", "up", "down")
@@ -20,6 +24,8 @@ func _get_input() -> void:
 		set_view_direction(get_character_direction((Data.current_active_character)))
 		direction = Vector2.ZERO
 		is_running = false
+		if Input.is_action_just_pressed("interact"):
+			Data.current_active_character.advance_dialog()
 
 func _update_view_direction() -> void:
 	if direction:

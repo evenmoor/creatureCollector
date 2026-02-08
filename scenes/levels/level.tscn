@@ -228,7 +228,9 @@ y_sort_enabled = true
 character_style = 2
 character_view_distance = 20
 
-[node name="trainer" parent="objects/characters" instance=ExtResource("3_b2cq8")]
+[node name="trainer" parent="objects/characters" groups=["Enemies"] instance=ExtResource("3_b2cq8")]
 position = Vector2(45, -61)
-dialog = Array[String](["Hello Sucker", "Awww", "Whaaa?"])
+defeated = false
+dialog = Array[String](["Hello Sucker", "Whaaa?"])
+defeated_dialog = Array[String](["aww", "shit", "I ", "lost"])
 character_style = 1
