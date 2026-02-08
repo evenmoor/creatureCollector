@@ -1,14 +1,13 @@
 extends Character
 
-func _physics_process(delta: float) -> void:
-	_get_input()
-	_update_view_direction()
-	_move()
-	_animate(delta)
-
 func _get_input() -> void:
-	is_running = Input.is_action_pressed("run")
-	direction = Input.get_vector("left", "right", "up", "down")
+	if not Data.current_active_character: #pause input when an enemy is moving to challenge
+		is_running = Input.is_action_pressed("run")
+		direction = Input.get_vector("left", "right", "up", "down")
+	else:
+		set_view_direction(get_character_direction((Data.current_active_character)))
+		direction = Vector2.ZERO
+		is_running = false
 
 func _update_view_direction() -> void:
 	if direction:
@@ -16,3 +15,8 @@ func _update_view_direction() -> void:
 		view_direction = Vector2i(round(direction.x), y)
 	vision.target_position = view_direction * character_view_distance
 	
+func _physics_process(delta: float) -> void:
+	_get_input()
+	_update_view_direction()
+	move()
+	animate(delta)

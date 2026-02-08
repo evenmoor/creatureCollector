@@ -1,4 +1,8 @@
 extends Node
+
+#misc variables
+var current_active_character:Character = null
+
 #global enums
 enum CHARACTER_STYLE {CHARACTER, BLONDE, PLAYER, GREEN, FIRE, GRASS, ICE, PURPLE, STRAW, BOY, GIRL} #character types
 

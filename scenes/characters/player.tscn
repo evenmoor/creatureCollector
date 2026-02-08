@@ -3,8 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://drvov87dits7i" path="res://scenes/characters/character.tscn" id="1_rp718"]
 [ext_resource type="Script" uid="uid://cw253s78og081" path="res://scripts/player.gd" id="2_yewv4"]
 
-[node name="player" instance=ExtResource("1_rp718")]
+[node name="player" groups=["Player"] instance=ExtResource("1_rp718")]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("2_yewv4")
 
 [node name="playerCamera" type="Camera2D" parent="." index="2"]
 zoom = Vector2(3, 3)
+
+[node name="caracterVisionRay" parent="." index="3"]
+collision_mask = 4
