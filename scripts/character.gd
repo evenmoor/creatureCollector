@@ -36,8 +36,8 @@ func animate(delta) -> void:
 	sprite.frame_coords.x = int(current_h_frame) % sprite.hframes #trick to allow the ever increasing values of current_h_frame to be bounded by the number of frames available
 
 #change the view direction of the character to a specific vector 
-func set_view_direction(set_view_direction:Vector2i) -> void:
-	sprite.frame_coords.y = Data.CHARACTER_VIEW_DIRECTIONS[set_view_direction]
+func set_view_direction(new_view_direction:Vector2i) -> void:
+	sprite.frame_coords.y = Data.CHARACTER_VIEW_DIRECTIONS[new_view_direction]
 
 #determine the vector2i direction between this character and another character
 func get_character_direction(target:Character) -> Vector2i:
