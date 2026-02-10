@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3lawbga8gbbs"]
+
+[ext_resource type="Texture2D" uid="uid://1534wrtp481y" path="res://assets/graphics/sprites/objects/arena_grass.png" id="1_nelt1"]
+
+[node name="grassArena" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="ArenaGrass" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_nelt1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-29, -47, -42, -35, -42, 32, -27, 46, 25, 46, 41, 35, 42, -34, 29, -47)

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://05vc2406u68o"]
+
+[ext_resource type="Texture2D" uid="uid://d0eeq152u2b7g" path="res://assets/graphics/sprites/objects/arena_fire.png" id="1_6hygp"]
+
+[node name="fireArena" type="StaticBody2D"]
+y_sort_enabled = true
+
+[node name="ArenaFire" type="Sprite2D" parent="."]
+y_sort_enabled = true
+texture = ExtResource("1_6hygp")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-29, -47, -42, -35, -42, 32, -27, 46, 25, 46, 41, 35, 42, -34, 29, -47)
