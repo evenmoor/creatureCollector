@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d0eeq152u2b7g" path="res://assets/graphics/sprites/objects/arena_fire.png" id="1_6hygp"]
 
-[node name="fireArena" type="StaticBody2D"]
+[node name="fire_arena" type="StaticBody2D"]
 y_sort_enabled = true
 
 [node name="ArenaFire" type="Sprite2D" parent="."]

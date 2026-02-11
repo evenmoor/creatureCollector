@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpu5uvfn84w67"]
+
+[ext_resource type="Texture2D" uid="uid://rt4x18wjefka" path="res://assets/graphics/sprites/objects/house2.png" id="1_73jx2"]
+
+[node name="house_2" type="StaticBody2D"]
+
+[node name="house2" type="Sprite2D" parent="."]
+texture = ExtResource("1_73jx2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-35, -36.5, 34, -36.5, 34, 3.5, 30, 9.5, 30, 33.5, -30, 33.5, -30, 8.5, -35, 3.5)

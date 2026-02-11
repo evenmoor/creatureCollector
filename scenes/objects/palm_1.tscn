@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6tnhj7dyarw"]
+
+[ext_resource type="Texture2D" uid="uid://p2l3l2h1ubfc" path="res://assets/graphics/sprites/objects/palm1.png" id="1_apb76"]
+
+[node name="palm_1" type="StaticBody2D"]
+
+[node name="Palm1" type="Sprite2D" parent="."]
+texture = ExtResource("1_apb76")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -16, -7, -13, -6, -7, -3, -4, -4, 7, 0, 20, 3, 18, -2, 5, 0, -4, 5, -6, 9, -10, 6, -16)

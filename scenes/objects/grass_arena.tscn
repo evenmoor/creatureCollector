@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://1534wrtp481y" path="res://assets/graphics/sprites/objects/arena_grass.png" id="1_nelt1"]
 
-[node name="grassArena" type="StaticBody2D"]
+[node name="grass_arena" type="StaticBody2D"]
 y_sort_enabled = true
 
 [node name="ArenaGrass" type="Sprite2D" parent="."]

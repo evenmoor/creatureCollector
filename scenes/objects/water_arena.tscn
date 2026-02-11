@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://capdgd0wkjk74" path="res://assets/graphics/sprites/objects/arena_water.png" id="1_sedda"]
 
-[node name="waterArena" type="StaticBody2D"]
+[node name="water_arena" type="StaticBody2D"]
 y_sort_enabled = true
 
 [node name="ArenaWater" type="Sprite2D" parent="."]
