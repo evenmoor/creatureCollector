@@ -4,11 +4,13 @@
 [ext_resource type="Script" uid="uid://dgyb6b50tcv5l" path="res://scripts/trainer.gd" id="2_7ugo5"]
 [ext_resource type="PackedScene" uid="uid://c62q37faak0e3" path="res://scenes/dialog_box.tscn" id="3_7apfp"]
 
-[node name="trainer" instance=ExtResource("1_nlber")]
+[node name="trainer" groups=["Enemies"] instance=ExtResource("1_nlber")]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("2_7ugo5")
+defeated = false
 dialog = Array[String]([])
+defeated_dialog = Array[String]([])
 
 [node name="timers" type="Node" parent="." index="2"]
 
@@ -26,7 +28,6 @@ collision_mask = 2
 [node name="dialogBox" parent="." index="4" instance=ExtResource("3_7apfp")]
 visible = false
 z_index = 2
-anchors_preset = -1
 offset_bottom = -50.0
 
 [connection signal="timeout" from="timers/trainerWatchTimer" to="." method="_on_trainer_watch_timer_timeout"]

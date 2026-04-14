@@ -19,6 +19,7 @@ var character_walk_speed:int = 60
 var character_run_speed:int = 130
 @export var stop_radius:int = 27
 var is_running:bool = false
+var can_move:bool = true
 
 #animation variables
 var current_h_frame:float
@@ -41,14 +42,21 @@ func set_view_direction(new_view_direction:Vector2i) -> void:
 
 #determine the vector2i direction between this character and another character
 func get_character_direction(target:Character) -> Vector2i:
-	var target_direction = (target.position - position).normalized()
-	return Vector2i(round(target_direction.x), round(target_direction.y))
+	if target and self: #make sure target and self exist to deal with previously freed error
+		var target_direction = (target.position - position).normalized()
+		return Vector2i(round(target_direction.x), round(target_direction.y))
+	else:
+		return Vector2i.DOWN
 
 #handle the movement of this character in its direction supporting running
 func move() -> void:
 	var speed:int = character_run_speed if is_running else character_walk_speed
 	velocity = direction * speed
 	move_and_slide()
+	
+func stop() -> void:
+	direction = Vector2.ZERO
+	can_move = false
 
 func _ready() -> void:
 	sprite.texture = load(Data.CHARACTER_TEXTURE_DATA[character_style])

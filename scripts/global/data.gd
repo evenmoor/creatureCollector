@@ -1,10 +1,11 @@
 extends Node
+#global enums
+enum CHARACTER_STYLE {CHARACTER, BLONDE, PLAYER, GREEN, FIRE, GRASS, ICE, PURPLE, STRAW, BOY, GIRL} #character types
+enum LOCATION {OVERWORLD, HOUSE}
 
 #misc variables
 var current_active_character:Character = null
-
-#global enums
-enum CHARACTER_STYLE {CHARACTER, BLONDE, PLAYER, GREEN, FIRE, GRASS, ICE, PURPLE, STRAW, BOY, GIRL} #character types
+var current_player_location: LOCATION
 
 #global consts
 const ANIMATION_SPEED:int = 6
@@ -33,4 +34,13 @@ const CHARACTER_VIEW_DIRECTIONS = {
 	Vector2i(1,-1) : 2, # up right
 	Vector2i(-1,1) : 1, # down left
 	Vector2i(-1,-1) : 1, # up left
+}
+
+const LEVEL_PATHS = {
+	LOCATION.OVERWORLD: "res://scenes/levels/overworld.tscn",
+	LOCATION.HOUSE: "res://scenes/levels/static/house.tscn"
+}
+
+var character_data = {
+	
 }

@@ -7,7 +7,7 @@ func _check_interactable() -> void :
 		interactable = vision.get_collider()
 
 func _get_input() -> void:
-	if Input.is_action_pressed("test"): #manually flip defeat bit to test dialog trees
+	if Input.is_action_just_pressed("test"): #manually flip defeat bit to test dialog trees
 		for trainer in get_tree().get_nodes_in_group("Enemies"):
 			trainer.defeated = !trainer.defeated
 		
@@ -38,5 +38,6 @@ func _physics_process(delta: float) -> void:
 	_update_view_direction()
 	_check_interactable() 
 	
-	move()
-	animate(delta)
+	if can_move:
+		move()
+		animate(delta)

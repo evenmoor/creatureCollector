@@ -13,11 +13,13 @@ config_version=5
 config/name="creatureCollector"
 run/main_scene="uid://2rdml55d3qse"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
 [autoload]
 
 Data="*res://scripts/global/data.gd"
+TransitionLayer="*res://scenes/transition_layer.tscn"
 
 [display]
 
@@ -84,3 +86,4 @@ test={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

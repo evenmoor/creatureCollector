@@ -1,7 +1,6 @@
-[gd_scene load_steps=22 format=4 uid="uid://2rdml55d3qse"]
+[gd_scene load_steps=21 format=4 uid="uid://2rdml55d3qse"]
 
 [ext_resource type="PackedScene" uid="uid://cgwh4h6gv5hwt" path="res://scenes/levels/level.tscn" id="1_fl1qg"]
-[ext_resource type="PackedScene" uid="uid://b6axjvgw6xnb8" path="res://scenes/characters/trainer.tscn" id="2_hh5uf"]
 [ext_resource type="PackedScene" uid="uid://dytbjwn8jaja1" path="res://scenes/objects/water_arena.tscn" id="2_usmjs"]
 [ext_resource type="PackedScene" uid="uid://05vc2406u68o" path="res://scenes/objects/fire_arena.tscn" id="3_usmjs"]
 [ext_resource type="PackedScene" uid="uid://clnodip3p0jul" path="res://scenes/objects/house_1.tscn" id="5_g6jrr"]
@@ -29,12 +28,6 @@ tile_map_data = PackedByteArray("AAD8//3/AAAEAAIAAAD8//7/AAAEAAIAAAD8////AAAEAAI
 
 [node name="player" parent="objects/characters" index="0"]
 position = Vector2(91, 76)
-
-[node name="trainer" parent="objects/characters" index="1" instance=ExtResource("2_hh5uf")]
-position = Vector2(12, -81)
-dialog = Array[String](["Hello", "Let's Go!"])
-defeated_dialog = Array[String](["Good Fight!"])
-character_style = 1
 
 [node name="waterArena" parent="objects/levelObjects" index="0" instance=ExtResource("2_usmjs")]
 position = Vector2(-753, -86)
@@ -92,5 +85,3 @@ position = Vector2(-370, 104)
 
 [node name="houseGate" parent="transitionGates" index="0" instance=ExtResource("20_g6jrr")]
 position = Vector2(-54, 89)
-target = 1
-player_position_offset_direction = "DOWN"
