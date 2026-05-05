@@ -1,7 +1,22 @@
 extends Node
 #global enums
 enum CHARACTER_STYLE {CHARACTER, BLONDE, PLAYER, GREEN, FIRE, GRASS, ICE, PURPLE, STRAW, BOY, GIRL} #character types
-enum LOCATION {OVERWORLD, HOUSE}
+enum LOCATION {
+	OVERWORLD
+	,OVERWORLD_STARTERTOWN_PLAYERHOUSE
+	,OVERWORLD_FIRETOWN_HOUSE1
+	,OVERWORLD_FIRETOWN_HOUSE2
+	,OVERWORLD_FIRETOWN_HOUSE3
+	,OVERWORLD_FIRETOWN_HOSPITAL
+	,OVERWORLD_FIRETOWN_GYM
+	,HOUSE
+	,HOUSE_STARTERTOWN_PLAYERHOUSE
+	,HOUSE_FIRETOWN_HOUSE1
+	,HOUSE_FIRETOWN_HOUSE2
+	,HOUSE_FIRETOWN_HOUSE3
+	,HOSPITAL_FIRETOWN_HOSPITAL1
+	,GYM_FIRETOWN_GYM1
+}
 
 #misc variables
 var current_active_character:Character = null
@@ -37,8 +52,20 @@ const CHARACTER_VIEW_DIRECTIONS = {
 }
 
 const LEVEL_PATHS = {
-	LOCATION.OVERWORLD: "res://scenes/levels/overworld.tscn",
-	LOCATION.HOUSE: "res://scenes/levels/static/house.tscn"
+	LOCATION.OVERWORLD: "res://scenes/levels/overworld.tscn"
+	,LOCATION.OVERWORLD_STARTERTOWN_PLAYERHOUSE: "res://scenes/levels/overworld.tscn"
+	,LOCATION.OVERWORLD_FIRETOWN_HOUSE1: "res://scenes/levels/overworld.tscn"
+	,LOCATION.OVERWORLD_FIRETOWN_HOUSE2: "res://scenes/levels/overworld.tscn"
+	,LOCATION.OVERWORLD_FIRETOWN_HOUSE3: "res://scenes/levels/overworld.tscn"
+	,LOCATION.OVERWORLD_FIRETOWN_HOSPITAL: "res://scenes/levels/overworld.tscn"
+	,LOCATION.OVERWORLD_FIRETOWN_GYM: "res://scenes/levels/overworld.tscn"
+	,LOCATION.HOUSE: "res://scenes/levels/static/house.tscn"
+	,LOCATION.HOUSE_STARTERTOWN_PLAYERHOUSE : "res://scenes/levels/static/starterTown_playerHouse.tscn"
+	,LOCATION.HOUSE_FIRETOWN_HOUSE1: "res://scenes/levels/static/fireTown_house1.tscn"
+	,LOCATION.HOUSE_FIRETOWN_HOUSE2: "res://scenes/levels/static/fireTown_house2.tscn"
+	,LOCATION.HOUSE_FIRETOWN_HOUSE3: "res://scenes/levels/static/fireTown_house3.tscn"
+	,LOCATION.HOSPITAL_FIRETOWN_HOSPITAL1: "res://scenes/levels/static/fireTown_hospital.tscn"
+	,LOCATION.GYM_FIRETOWN_GYM1: "res://scenes/levels/static/fireTown_gym.tscn"
 }
 
 var character_data = {
